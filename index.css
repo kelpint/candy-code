@@ -23,3 +23,26 @@ button,
 body {
 	font-size: 25;
 }
+
+#content {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+#log {
+	margin-left: auto;
+	margin-right: 5vh;
+}
+
+.guess-fail {
+	color: white;
+}
+
+.guess-sucess {
+	color: lightgreen;
+}
+
+#log {
+	max-height: 90vh;
+	overflow-y: scroll;
+}

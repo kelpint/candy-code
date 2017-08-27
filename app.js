@@ -38,18 +38,25 @@ var jars = [
 	1602,
 ];
 
+var logbody = document.getElementById("logbody");
 document.getElementById("submit").onclick = function() {
 	var guess = document.getElementById("guess").value;
 	guess = parseInt(guess, 10);
 	var jar = jars.indexOf(guess);
 	if (jar === -1) {
 		alert("incorrect guess");
+		logbody.innerHTML +=
+			"<tr><td>" + String(guess) + '</td><td class="guess-fail">fail</td></tr>';
 	} else {
 		if (jar >= 32) {
 			alert("YOU WON A MEGA JAR!!!!!!!!");
 		} else {
 			alert("YOU WON JAR NUMBER " + String(jar) + "!!!");
 		}
+		logbody.innerHTML +=
+			"<tr><td>" +
+			String(guess) +
+			'</td><td class="guess-sucess">sucess</td></tr>';
 		delete jars[jar];
 	}
 	document.getElementById("guess").value = "";
